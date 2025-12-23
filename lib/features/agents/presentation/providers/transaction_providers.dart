@@ -29,7 +29,7 @@ class TransactionsNotifier extends AsyncNotifier<List<TransactionModel>> {
   Future<void> addTransaction({
     required double amount,
     required String currency,
-    required TransactionType type,
+    required String type,
     String? details,
   }) async {
     state = const AsyncLoading();

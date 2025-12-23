@@ -32,7 +32,7 @@ class MenuItem extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             color: (pageNum == currentPage)
-                ? Theme.of(context).colorScheme.surfaceContainer
+                ? Theme.of(context).hoverColor
                 : Colors.transparent,
             borderRadius: BorderRadius.circular(SizesConfig.borderRadiusSm),
             border: Border.all(

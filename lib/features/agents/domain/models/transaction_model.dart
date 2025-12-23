@@ -14,7 +14,7 @@ abstract class TransactionModel with _$TransactionModel {
     @JsonKey(name: 'agent_id') required String agentId,
     required double amount,
     required String currency, // USD | TRY | EUR
-    required TransactionType type, // credit | debit
+    required String type, // credit | debit
     String? details,
     @JsonKey(name: 'created_at') required DateTime createdAt,
   }) = _TransactionModel;

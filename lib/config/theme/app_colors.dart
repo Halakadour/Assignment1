@@ -63,7 +63,8 @@ class AppColors {
   static const gray600 = Color(0xFF363A44);
   static const gray700 = Color(0xFF292C33);
   static const gray800 = Color(0xFF1B1D22);
-  static const gray850 = Color(0xFF0A0B0D);
+  static const gray850 = Color(0xFF121416);
+  static const gray900 = Color(0xFF0A0B0D);
 
   static const white = Color(0xFFFFFFFF);
   static const black = Color(0xFF0C0C0C);
@@ -129,6 +130,7 @@ class AppColors {
   static const neutral700 = gray700;
   static const neutral800 = gray800;
   static const neutral850 = gray850;
+  static const neutral900 = gray900;
 
   // Mapped Colors
   // For The Light Mode
@@ -180,7 +182,7 @@ class AppColors {
   static const borderActionHoverLight = primary600;
 
   // For The Dark Mode
-  static const hoverColorDark = neutral50;
+  static const hoverColorDark = neutral700;
   static const focusColorDark = neutral100;
   static const disableColorDark = neutralDefault;
 
@@ -208,9 +210,10 @@ class AppColors {
 
   static const surfacePageDark = neutral850;
   static const surfaceDefaultDark = neutral800;
-  static const surfaceContainerDark = neutral700;
-  static const surfaceActionDark = primaryDefault;
-  static const surfaceActionHoverDark = primary400;
+  static const surfaceContainerDark = neutral800;
+  static const surfaceFieldDark = neutral700;
+  static const surfaceActionDark = primary600;
+  static const surfaceActionHoverDark = primaryDefault;
   static const surfaceDisabledDark = neutral600;
   static const surfaceInfoDark = info800;
   static const surfaceWarningDark = warning800;

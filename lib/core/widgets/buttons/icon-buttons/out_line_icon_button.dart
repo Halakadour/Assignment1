@@ -14,7 +14,7 @@ class OutLineIconButton extends StatelessWidget {
     return IconButton(
       onPressed: onPressed,
       style: IconButton.styleFrom(
-        backgroundColor: Theme.of(context).colorScheme.surfaceContainer,
+        backgroundColor: Theme.of(context).hoverColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(8.0),
           side: BorderSide(color: Theme.of(context).dividerColor),

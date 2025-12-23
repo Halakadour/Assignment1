@@ -110,7 +110,8 @@ ThemeData getDarkTheme() {
     ),
     cardTheme: CardThemeData(
       elevation: 0,
-      color: AppColors.surfaceDefaultDark,
+      color: AppColors.surfaceContainerDark,
+      clipBehavior: Clip.hardEdge,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusGeometry.circular(8.0),
       ),
@@ -120,10 +121,14 @@ ThemeData getDarkTheme() {
       color: AppColors.borderDefaultDark,
       thickness: 0.7,
     ),
+    listTileTheme: ListTileThemeData(
+      iconColor: AppColors.iconsDefaultDark,
+      textColor: AppColors.textBodyDark,
+    ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: AppColors.surfaceContainerDark,
-      hoverColor: AppColors.surfaceContainerDark,
+      fillColor: AppColors.surfaceFieldDark,
+      hoverColor: AppColors.surfaceFieldDark,
       labelStyle: AppTextStyles.labelSmall(color: AppColors.textBodyDark),
       hintStyle: AppTextStyles.labelSmall(color: AppColors.textBodyDark),
       helperStyle: AppTextStyles.labelSmall(color: AppColors.textInfoDark),
@@ -152,7 +157,7 @@ ThemeData getDarkTheme() {
       ),
     ),
     dialogTheme: DialogThemeData(
-      backgroundColor: AppColors.surfaceContainerDark,
+      backgroundColor: AppColors.surfaceFieldDark,
       titleTextStyle: AppTextStyles.bodyMedium(
         color: AppColors.textHeadingsDark,
       ),

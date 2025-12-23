@@ -24,7 +24,9 @@ class _CustomSidebarState extends State<CustomSidebar> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      shape: BeveledRectangleBorder(),
+      shape: BorderDirectional(
+        end: BorderSide(color: Theme.of(context).disabledColor, width: 1),
+      ),
       backgroundColor: Theme.of(context).colorScheme.surface,
       child: SingleChildScrollView(
         child: Column(

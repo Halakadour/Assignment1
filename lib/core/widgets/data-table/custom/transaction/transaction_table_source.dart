@@ -24,7 +24,7 @@ class TransactionTableSource extends DataTableSource {
         DataCell(Text(transaction!.id)),
         DataCell(Text(transaction.amount.toStringAsFixed(2))),
         DataCell(Text(transaction.currency)),
-        DataCell(Text(transaction.type.name)),
+        DataCell(Text(transaction.type)),
         DataCell(Text(transaction.details ?? "")),
         DataCell(Text(transaction.createdAt.timeZoneName)),
         DataCell(

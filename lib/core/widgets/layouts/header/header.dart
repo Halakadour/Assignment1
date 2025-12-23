@@ -23,7 +23,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).appBarTheme.backgroundColor,
         border: BorderDirectional(
-          //bottom: BorderSide(color: Theme.of(context).disabledColor, width: 1),
+          bottom: BorderSide(color: Theme.of(context).disabledColor, width: 1),
         ),
       ),
       padding: const EdgeInsets.symmetric(

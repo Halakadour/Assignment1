@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
-class CustomReactiveTextField extends StatelessWidget {
+class CustomReactiveTextField<T> extends StatelessWidget {
   const CustomReactiveTextField({
     super.key,
     this.maxLines = 1,
@@ -15,6 +15,7 @@ class CustomReactiveTextField extends StatelessWidget {
     this.formControlName,
     this.validationMessages,
     this.onPressedSuffixIcon,
+    this.keyboardType,
   });
   final int? maxLines;
   final bool expands;
@@ -27,10 +28,11 @@ class CustomReactiveTextField extends StatelessWidget {
   final String? formControlName;
   final Map<String, String Function(Object)>? validationMessages;
   final void Function()? onPressedSuffixIcon;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
-    return ReactiveTextField<String>(
+    return ReactiveTextField<T>(
       formControlName: formControlName,
       autocorrect: true,
       obscureText: obscureText,
@@ -39,6 +41,7 @@ class CustomReactiveTextField extends StatelessWidget {
       expands: expands,
       textAlignVertical: TextAlignVertical.top,
       style: Theme.of(context).inputDecorationTheme.labelStyle,
+      keyboardType: keyboardType,
       decoration: InputDecoration(
         filled: true,
         fillColor: Theme.of(context).inputDecorationTheme.fillColor,

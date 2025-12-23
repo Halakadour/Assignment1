@@ -58,6 +58,8 @@ class CustomPaginatedDataTable extends StatelessWidget {
             color: Theme.of(context).cardColor,
             elevation: 0,
           ),
+          hoverColor: Theme.of(context).cardColor,
+          highlightColor: Theme.of(context).highlightColor,
         ),
         child: PaginatedDataTable2(
           source: source,
@@ -81,9 +83,11 @@ class CustomPaginatedDataTable extends StatelessWidget {
           onRowsPerPageChanged: (noOfRows) {},
 
           // HEADER DESIGN
-          headingTextStyle: Theme.of(context).textTheme.labelMedium,
+          headingTextStyle: Theme.of(context).textTheme.labelMedium!.copyWith(
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
           headingRowColor: WidgetStateColor.resolveWith(
-            (states) => Theme.of(context).primaryColor,
+            (states) => Theme.of(context).primaryColorLight,
           ),
           headingRowDecoration: BoxDecoration(
             borderRadius: BorderRadius.only(

@@ -12,7 +12,7 @@ _TransactionModel _$TransactionModelFromJson(Map<String, dynamic> json) =>
       agentId: json['agent_id'] as String,
       amount: (json['amount'] as num).toDouble(),
       currency: json['currency'] as String,
-      type: $enumDecode(_$TransactionTypeEnumMap, json['type']),
+      type: json['type'] as String,
       details: json['details'] as String?,
       createdAt: DateTime.parse(json['created_at'] as String),
     );
@@ -23,12 +23,7 @@ Map<String, dynamic> _$TransactionModelToJson(_TransactionModel instance) =>
       'agent_id': instance.agentId,
       'amount': instance.amount,
       'currency': instance.currency,
-      'type': _$TransactionTypeEnumMap[instance.type]!,
+      'type': instance.type,
       'details': instance.details,
       'created_at': instance.createdAt.toIso8601String(),
     };
-
-const _$TransactionTypeEnumMap = {
-  TransactionType.credit: 'credit',
-  TransactionType.debit: 'debit',
-};

@@ -1,3 +1,5 @@
+import 'package:assignment_1/translation/translation.dart';
+
 import '../../../../core/services/supabase_service.dart';
 import '../../domain/models/user_model.dart';
 import '../repos/auth_repo.dart';
@@ -16,7 +18,8 @@ class AuthSupabaseDatasource extends AuthRepo {
           .single();
       return UserModel.fromJson(response);
     } catch (e) {
-      throw Exception(e.toString());
+      //throw Exception(e.toString());
+      throw Exception("User not found".i18n);
     }
   }
 
@@ -35,7 +38,8 @@ class AuthSupabaseDatasource extends AuthRepo {
 
       return UserModel.fromJson(response);
     } catch (e) {
-      throw Exception(e.toString());
+      //throw Exception(e.toString());
+      throw Exception("Failed to register user".i18n);
     }
   }
 }

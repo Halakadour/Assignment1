@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 mixin _$TransactionModel {
 
  String get id;@JsonKey(name: 'agent_id') String get agentId; double get amount; String get currency;// USD | TRY | EUR
- TransactionType get type;// credit | debit
+ String get type;// credit | debit
  String? get details;@JsonKey(name: 'created_at') DateTime get createdAt;
 /// Create a copy of TransactionModel
 /// with the given fields replaced by the non-null parameter values.
@@ -50,7 +50,7 @@ abstract mixin class $TransactionModelCopyWith<$Res>  {
   factory $TransactionModelCopyWith(TransactionModel value, $Res Function(TransactionModel) _then) = _$TransactionModelCopyWithImpl;
 @useResult
 $Res call({
- String id,@JsonKey(name: 'agent_id') String agentId, double amount, String currency, TransactionType type, String? details,@JsonKey(name: 'created_at') DateTime createdAt
+ String id,@JsonKey(name: 'agent_id') String agentId, double amount, String currency, String type, String? details,@JsonKey(name: 'created_at') DateTime createdAt
 });
 
 
@@ -74,7 +74,7 @@ as String,agentId: null == agentId ? _self.agentId : agentId // ignore: cast_nul
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
 as double,currency: null == currency ? _self.currency : currency // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as TransactionType,details: freezed == details ? _self.details : details // ignore: cast_nullable_to_non_nullable
+as String,details: freezed == details ? _self.details : details // ignore: cast_nullable_to_non_nullable
 as String?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,
   ));
@@ -161,7 +161,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'agent_id')  String agentId,  double amount,  String currency,  TransactionType type,  String? details, @JsonKey(name: 'created_at')  DateTime createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'agent_id')  String agentId,  double amount,  String currency,  String type,  String? details, @JsonKey(name: 'created_at')  DateTime createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TransactionModel() when $default != null:
 return $default(_that.id,_that.agentId,_that.amount,_that.currency,_that.type,_that.details,_that.createdAt);case _:
@@ -182,7 +182,7 @@ return $default(_that.id,_that.agentId,_that.amount,_that.currency,_that.type,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'agent_id')  String agentId,  double amount,  String currency,  TransactionType type,  String? details, @JsonKey(name: 'created_at')  DateTime createdAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'agent_id')  String agentId,  double amount,  String currency,  String type,  String? details, @JsonKey(name: 'created_at')  DateTime createdAt)  $default,) {final _that = this;
 switch (_that) {
 case _TransactionModel():
 return $default(_that.id,_that.agentId,_that.amount,_that.currency,_that.type,_that.details,_that.createdAt);case _:
@@ -202,7 +202,7 @@ return $default(_that.id,_that.agentId,_that.amount,_that.currency,_that.type,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'agent_id')  String agentId,  double amount,  String currency,  TransactionType type,  String? details, @JsonKey(name: 'created_at')  DateTime createdAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'agent_id')  String agentId,  double amount,  String currency,  String type,  String? details, @JsonKey(name: 'created_at')  DateTime createdAt)?  $default,) {final _that = this;
 switch (_that) {
 case _TransactionModel() when $default != null:
 return $default(_that.id,_that.agentId,_that.amount,_that.currency,_that.type,_that.details,_that.createdAt);case _:
@@ -225,7 +225,7 @@ class _TransactionModel implements TransactionModel {
 @override final  double amount;
 @override final  String currency;
 // USD | TRY | EUR
-@override final  TransactionType type;
+@override final  String type;
 // credit | debit
 @override final  String? details;
 @override@JsonKey(name: 'created_at') final  DateTime createdAt;
@@ -263,7 +263,7 @@ abstract mixin class _$TransactionModelCopyWith<$Res> implements $TransactionMod
   factory _$TransactionModelCopyWith(_TransactionModel value, $Res Function(_TransactionModel) _then) = __$TransactionModelCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@JsonKey(name: 'agent_id') String agentId, double amount, String currency, TransactionType type, String? details,@JsonKey(name: 'created_at') DateTime createdAt
+ String id,@JsonKey(name: 'agent_id') String agentId, double amount, String currency, String type, String? details,@JsonKey(name: 'created_at') DateTime createdAt
 });
 
 
@@ -287,7 +287,7 @@ as String,agentId: null == agentId ? _self.agentId : agentId // ignore: cast_nul
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
 as double,currency: null == currency ? _self.currency : currency // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as TransactionType,details: freezed == details ? _self.details : details // ignore: cast_nullable_to_non_nullable
+as String,details: freezed == details ? _self.details : details // ignore: cast_nullable_to_non_nullable
 as String?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,
   ));

@@ -19,6 +19,7 @@ dependencies:
   go_router: ^17.0.0
   i18n_extension: ^15.1.0
   i18n_extension_importer: ^0.0.6
+  image_picker_web: ^4.0.0
   json_annotation: ^4.9.0
   lottie: ^3.3.2
   reactive_dropdown_search: ^6.0.0-pre4

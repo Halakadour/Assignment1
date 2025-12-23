@@ -3,10 +3,12 @@ import 'package:assignment_1/core/widgets/buttons/icon-buttons/out_line_icon_but
 import 'package:assignment_1/features/agents/presentation/providers/agent_providers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:i18n_extension/default.i18n.dart';
 
 import '../../../../config/scales/gap.dart';
 import '../../../../core/widgets/animation/empty_status_animation.dart';
 import '../../../../core/widgets/animation/failure_status_animation.dart';
+import '../../../../core/widgets/dialog/agent/add_agent_dialog.dart';
 import '../widgets/agent_card.dart';
 
 class AgentsPage extends ConsumerWidget {
@@ -17,6 +19,12 @@ class AgentsPage extends ConsumerWidget {
     final agentAsync = ref.watch(agentsProvider);
 
     return Scaffold(
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () =>
+            showDialog(context: context, builder: (_) => AddAgentDialog()),
+        label: Text("Add Agent".i18n),
+        icon: Icon(Icons.add),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -50,8 +58,12 @@ class AgentsPage extends ConsumerWidget {
             Expanded(
               child: agentAsync.when(
                 data: (agents) {
-                  return ListView.builder(
+                  return GridView.builder(
                     itemCount: agents.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4,
+                      childAspectRatio: 4,
+                    ),
                     itemBuilder: (context, index) {
                       if (agents.isEmpty) {
                         return const EmptyStatusAnimation();
